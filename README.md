@@ -5,7 +5,7 @@
 
 ### Scripts Folder
 
-#### This folder houses these files:
+#### This folder houses these files(so far):
 * Linux.sh
 * Windows.ps1
 * AD.ps1
