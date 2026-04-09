@@ -4,22 +4,15 @@
 ## This is a personal repo with project details, scripts, and documentation
 
 ### Repository Structure
-- - -
-B.A.D./
-
+<pre><code>B.A.D./
 ├── Scripts/
-
-│     ├── windows-onboard.ps1     # Windows system onboarding
-
-│     ├── linux-onboard.sh        # Linux system onboarding
-
-│     └── ad-setup.ps1            # Active Directory setup
-
+│   ├── windows-onboard.ps1
+│   ├── linux-onboard.sh
+│   └── ad-setup.ps1
 └── Projects/
-
-  └── Scriptinator/           # GUI tool for remote script execution via Proxmox
-    
-- - -
+    └── Scriptinator/
+</code></pre>
+<hr>
 
 ### Scripts
 All scripts are interactive as they walk you through configuration step by step with prompts, validation, and color-coded output.
