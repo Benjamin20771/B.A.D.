@@ -90,6 +90,8 @@ def main():
         except OSError:
             continue
         name = top.get("name", "")
+        if "." not in name:          # student VMs are named vm-first.last
+            continue
         if top.get("template") == "1" or SKIP_NAME_RE.match(name):
             continue
         if SKIP_TAG in top.get("tags", "").split(";"):
@@ -99,7 +101,8 @@ def main():
             continue
 
         cand = [(int(s.get("snaptime", 0)), sn, "vmstate" in s)
-                for sn, s in snaps.items() if sn.lower() not in PROTECT]
+                for sn, s in snaps.items() if sn.lower() not in PROTECT
+                and "deployment default" not in s.get("description", "").replace("%20", " ").lower()]
         cand.sort(reverse=True)                      # newest first
         keep, extra = cand[:KEEP_NEWEST], cand[KEEP_NEWEST:]
         for _, sn, ram in reversed(extra):           # oldest first
